@@ -136,7 +136,7 @@
     "sqlAOListenerName":"aon-listener-lensqlhademo",
     "sqlAOListenerPort":1433,
     "sqlLBIPAddress":"[parameters('SqlListenerIP')]",
-    "adPDCVMName":"[concat(parameters('namePrefix'),'-ad-0')]"
+    "adPDCVMName":"[concat(parameters('namePrefix'),'-ad-1')]"
   },
   "resources": [
     {
@@ -216,7 +216,7 @@
       }
     },
     {
-      "name": "[concat(variables('vmNamePrefix'), copyindex(), '-nic')]",
+      "name": "[concat(variables('vmNamePrefix'), copyindex(1), '-nic')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
       "dependsOn": [
@@ -251,7 +251,7 @@
         "name": "virtualMachineLoop",
         "count": "[parameters('vmCount')]"
       },
-      "name": "[concat(variables('vmNamePrefix'),copyindex(),'-newVM')]",
+      "name": "[concat(variables('vmNamePrefix'),copyindex(1),'-newVM')]",
       "dependsOn": [
         "nicLoop",
         "[resourceId('Microsoft.Compute/availabilitySets', variables('vmAvailabilitySetName'))]"
@@ -263,7 +263,7 @@
         },
         "parameters": {
           "vmName": {
-            "value": "[concat(variables('vmNamePrefix'), copyindex())]"
+            "value": "[concat(variables('vmNamePrefix'), copyindex(1))]"
           },
           "vmAvailabilitySetName": {
             "value": "[variables('vmAvailabilitySetName')]"

@@ -79,7 +79,7 @@
         },
         "imageSKU": {
             "type": "string",
-            "defaultValue": "2016-Datacenter-Server-Core"
+            "defaultValue": "2016-Datacenter"
         },
         "imageVersion": {
             "type": "string",
@@ -122,7 +122,7 @@
             }
         },
         {
-            "name": "[concat(variables('vmNamePrefix'), copyindex(), '-nic')]",
+            "name": "[concat(variables('vmNamePrefix'), copyindex(1), '-nic')]",
             "type": "Microsoft.Network/networkInterfaces",
             "location": "[parameters('location')]",
             "copy": {
@@ -150,7 +150,7 @@
                 "name": "virtualMachineLoop",
                 "count": "[parameters('vmCount')]"
             },
-            "name": "[concat(variables('vmNamePrefix'),copyindex(),'-newVM')]",
+            "name": "[concat(variables('vmNamePrefix'),copyindex(1),'-newVM')]",
             "dependsOn": [
                 "nicLoop",
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('vmAvailabilitySetName'))]"
@@ -162,7 +162,7 @@
                 },
                 "parameters": {
                     "vmName": {
-                        "value": "[concat(variables('vmNamePrefix'), copyindex())]"
+                        "value": "[concat(variables('vmNamePrefix'), copyindex(1))]"
                     },
                     "vmAvailabilitySetName": {
                         "value": "[variables('vmAvailabilitySetName')]"
