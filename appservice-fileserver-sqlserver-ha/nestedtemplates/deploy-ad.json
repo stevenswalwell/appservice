@@ -208,7 +208,7 @@
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat(variables('vmNamePrefix'),'0-newVM')]"
+                "[concat(variables('vmNamePrefix'),'1-newVM')]"
             ],
             "properties": {
                 "publisher": "Microsoft.Powershell",
