@@ -238,7 +238,7 @@
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'0'), 'CreateADForest')]"
+                "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'1'), 'CreateADForest')]"
             ],
             "properties": {
                 "publisher": "Microsoft.Powershell",
