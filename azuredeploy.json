@@ -148,10 +148,10 @@
   },
   "variables": {
     "names": {
-      "adNsg": "[concat(parameters('namePrefix'), '-ad_nsg')]",
-      "sqlNsg": "[concat(parameters('namePrefix'), '-sql_nsg')]",
-      "fsNsg": "[concat(parameters('namePrefix'), '-fs_nsg')]",
-      "vnet": "[concat(parameters('namePrefix'), '_vnet')]",
+      "adNsg": "[concat(parameters('namePrefix'), '-ad-Nsg')]",
+      "sqlNsg": "[concat(parameters('namePrefix'), '-sql-Nsg')]",
+      "fsNsg": "[concat(parameters('namePrefix'), '-fs-Nsg')]",
+      "vnet": "[concat(parameters('namePrefix'), '-vnet')]",
       "adSubnetName": "ADSubnet",
       "sqlSubnetName": "SQLSubnet",
       "fileServerSubnetName": "FileServerSubnet"
@@ -166,17 +166,17 @@
       "deployS2D": "[concat(parameters('artifactsLocation'),'/nestedtemplates/deploy-s2d-cluster.json',parameters('artifactsLocationSasToken'))]",
       "deploySql": "[concat(parameters('artifactsLocation'),'/nestedtemplates/deploy-sql-cluster.json',parameters('artifactsLocationSasToken'))]"
     },
-    "vnetPrefix": "172.24.0.0/16",
-    "adSubnetPrefix": "172.24.0.0/24",
-    "sqlSubnetPrefix": "172.24.1.0/24",
-    "fsSubnetPrefix": "172.24.2.0/24",
-    "controllerSubnetPrefix": "172.24.3.0/24",
-    "managementSubnetPrefix": "172.24.4.0/24",
-    "publisherSubnetPrefix": "172.24.5.0/24",
-    "frontendadSubnetPrefix": "172.24.6.0/24",
-    "workerSubnetPrefix": "172.24.8.0/21",
-    "adStatipIP":["172.24.0.100","172.24.0.101"],
-    "sqllistenerip":"172.24.1.100",
+    "vnetPrefix": "10.0.0.0/16",
+    "adSubnetPrefix": "10.0.0.0/24",
+    "sqlSubnetPrefix": "10.0.1.0/24",
+    "fsSubnetPrefix": "10.0.2.0/24",
+    "controllerSubnetPrefix": "10.0.3.0/24",
+    "managementSubnetPrefix": "10.0.4.0/24",
+    "publisherSubnetPrefix": "10.0.5.0/24",
+    "frontendadSubnetPrefix": "10.0.6.0/24",
+    "workerSubnetPrefix": "10.0.8.0/21",
+    "adStatipIP":["10.0.0.100","10.0.0.101"],
+    "sqllistenerip":"10.0.1.100",
     "networkSettings": {
       "vnetName": "[variables('names').vnet]",
       "addressSpace": {

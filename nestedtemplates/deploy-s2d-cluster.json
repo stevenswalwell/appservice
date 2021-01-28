@@ -114,7 +114,7 @@
     },
     "imageSKU": {
       "type": "string",
-      "defaultValue": "2016-Datacenter-Server"
+      "defaultValue": "2016-Datacenter-Server-Core"
     },
     "imageVersion": {
       "type": "string",
@@ -170,7 +170,7 @@
       "kind": "Storage"
     },
     {
-      "name": "[concat(variables('vmNamePrefix'), copyindex(1), '-nic')]",
+      "name": "[concat(variables('vmNamePrefix'), copyindex(), '-nic')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
       "copy": {
@@ -197,7 +197,7 @@
         "name": "virtualMachineLoop",
         "count": "[parameters('vmCount')]"
       },
-      "name": "[concat(variables('vmNamePrefix'),copyindex(1),'-newVM')]",
+      "name": "[concat(variables('vmNamePrefix'),copyindex(),'-newVM')]",
       "dependsOn": [
        "nicLoop",
         "[resourceId('Microsoft.Compute/availabilitySets', variables('vmAvailabilitySetName'))]"
@@ -209,7 +209,7 @@
         },
         "parameters": {
           "vmName": {
-            "value": "[concat(variables('vmNamePrefix'), copyindex(1))]"
+            "value": "[concat(variables('vmNamePrefix'), copyindex())]"
           },
           "vmAvailabilitySetName": {
             "value": "[variables('vmAvailabilitySetName')]"
