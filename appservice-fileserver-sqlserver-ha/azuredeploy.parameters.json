@@ -2,35 +2,38 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "adminUsername": {
-      "value": "GEN-USER"
+    "namePrefix": {
+      "value": "apprp"
     },
-    "adminPassword": {
-      "value": "GEN-PASSWORD"
+    "domainVMSize": {
+      "value": "Standard_DS1_v2"
+    },
+    "filServerVmSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "sqlVmSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "domainName": {
+      "value": "appsvc.local"
+    },
+    "AdminUsername": {
+      "value": "appsvc.admin"
     },
     "fileShareOwnerUserName": {
-      "value": "GEN-USER"
-    },
-    "fileShareOwnerPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "appsvc.fso"
     },
     "fileShareUserUserName": {
-      "value": "GEN-USER"
-    },
-    "fileShareUserPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "appsvc.fsu"
     },
     "sqlServerServiceAccountUserName": {
-      "value": "GEN-USER"
-    },
-    "sqlServerServiceAccountPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "svc_appsvc.sql"
     },
     "sqlLogin": {
-      "value": "GEN-USER"
+      "value": "appsvcsa"
     },
-    "sqlLoginPassword": {
-      "value": "GEN-PASSWORD"
+    "artifactsLocation": {
+      "value": "https://github.com/stevenswalwell/appservicedeploy/tree/main/appservice-fileserver-sqlserver-ha"
     }
   }
 }
