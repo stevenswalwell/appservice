@@ -345,7 +345,7 @@
     },
     {  
       "type":"Microsoft.Compute/virtualMachines/extensions",
-      "name":"[concat(variables('vmNamePrefix'),'2/sqlAOPrepare')]",
+      "name":"[concat(variables('vmNamePrefix'),'1/sqlAOPrepare')]",
       "location":"[parameters('location')]",
       "dependsOn":[
         "virtualMachineExtensionLoop"
