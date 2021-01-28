@@ -37,6 +37,18 @@
     },
     "adminPassword": {
       "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+    },
+    "fileShareOwnerPassword": {
+      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+    },
+    "fileShareUserPassword": {
+      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+    },
+    "sqlServerServiceAccountPassword": {
+      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+    },
+    "sqlLoginPassword": {
+      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
     }
   }
 }
