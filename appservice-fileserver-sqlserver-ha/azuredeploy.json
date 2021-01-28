@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "apiProfile": "2018-03-01-hybrid",
+  "apiProfile": "2019-03-01-hybrid",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
@@ -10,7 +10,7 @@
       "metadata": {
         "description": "Naming prefix for each new resource created. 3-char min, 5-char max, lowercase alphanumeric"
       },
-      "defaultValue": "aps"
+      "defaultValue": "apprp"
     },
     "domainVmSize": {
       "type": "string",
@@ -38,14 +38,14 @@
       "metadata": {
         "description": "DNS domain name for Active Directory domain"
       },
-      "defaultValue": "appsvc.local"
+      "defaultValue": "apprp.local"
     },
     "adminUsername": {
       "type": "string",
       "metadata": {
         "description": "Name of the Domain Administrator account"
       },
-      "defaultValue": "appsvcadmin"
+      "defaultValue": "apprp.admin"
     },
     "adminPassword": {
       "type": "securestring",
@@ -59,7 +59,7 @@
       "metadata": {
         "description": "Username for the fileshareowner account"
       },
-      "defaultValue": "FileShareOwner"
+      "defaultValue": "apprp.fso"
     },
     "fileShareOwnerPassword": {
       "type": "securestring",
@@ -73,7 +73,7 @@
       "metadata": {
         "description": "Username for the FileShareUser account"
       },
-      "defaultValue": "FileShareUser"
+      "defaultValue": "apprp.fsu"
     },
     "fileShareUserPassword": {
       "type": "securestring",
@@ -87,7 +87,7 @@
       "metadata": {
         "description": "Username for the SQL service account"
       },
-      "defaultValue": "svcSQL"
+      "defaultValue": "svc_apprp.sql"
     },
     "sqlServerServiceAccountPassword": {
       "type": "securestring",
@@ -101,7 +101,7 @@
       "metadata": {
         "description": "Username for the SQL account"
       },
-      "defaultValue": "sqlsa"
+      "defaultValue": "apprpsa"
     },
     "sqlLoginPassword": {
       "type": "securestring",
@@ -115,7 +115,7 @@
       "metadata": {
         "description": "Name of clustered Scale-Out File Server role"
       },
-      "defaultValue": "fs01"
+      "defaultValue": "apprpfs01"
     },
     "shareName": {
       "type": "string",

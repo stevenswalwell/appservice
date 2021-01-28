@@ -34,6 +34,9 @@
     },
     "artifactsLocation": {
       "value": "https://github.com/stevenswalwell/appservicedeploy/tree/main/appservice-fileserver-sqlserver-ha"
+    },
+    "adminPassword": {
+      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
     }
   }
 }
