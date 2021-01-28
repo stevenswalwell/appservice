@@ -306,7 +306,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmNamePrefix'),copyindex(),'/SqlVmIaasExtension')]",
+      "name": "[concat(variables('vmNamePrefix'),copyindex(1),'/SqlVmIaasExtension')]",
       "location": "[parameters('location')]",
       "dependsOn": [
         "virtualMachineLoop"
