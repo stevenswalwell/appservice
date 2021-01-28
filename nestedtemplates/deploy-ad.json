@@ -79,7 +79,7 @@
         },
         "imageSKU": {
             "type": "string",
-            "defaultValue": "2016-Datacenter"
+            "defaultValue": "2016-Datacenter-Server-Core"
         },
         "imageVersion": {
             "type": "string",
