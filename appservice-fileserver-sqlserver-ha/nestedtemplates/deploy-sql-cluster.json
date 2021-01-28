@@ -406,8 +406,8 @@
                "password": "PrivateSettingsRef:witnessStorageKey"
              },             
              "nodes":[  
-                "[concat(variables('vmNamePrefix'),'0')]",
-                "[concat(variables('vmNamePrefix'),'1')]"
+                "[concat(variables('vmNamePrefix'),'1')]",
+                "[concat(variables('vmNamePrefix'),'2')]"
              ],
              "sqlAlwaysOnEndpointName":"[variables('sqlAOEPName')]",
              "sqlAlwaysOnAvailabilityGroupName":"[variables('sqlAOAGName')]",
@@ -416,8 +416,8 @@
              "databaseNames":"AutoHa-sample",
              "lbName":"[variables('sqlLBName')]",
              "lbAddress":"[variables('sqlLBIPAddress')]",
-             "primaryReplica":"[concat(variables('vmNamePrefix'),'1')]",
-             "secondaryReplica":"[concat(variables('vmNamePrefix'),'0')]",
+             "primaryReplica":"[concat(variables('vmNamePrefix'),'2')]",
+             "secondaryReplica":"[concat(variables('vmNamePrefix'),'1')]",
              "dnsServerName":"[variables('adPDCVMName')]",
              "adminCreds":{  
                 "userName":"[parameters('adminUserName')]",
