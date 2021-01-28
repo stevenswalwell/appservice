@@ -345,7 +345,7 @@
     },
     {  
       "type":"Microsoft.Compute/virtualMachines/extensions",
-      "name":"[concat(variables('vmNamePrefix'),'0/sqlAOPrepare')]",
+      "name":"[concat(variables('vmNamePrefix'),'2/sqlAOPrepare')]",
       "location":"[parameters('location')]",
       "dependsOn":[
         "virtualMachineExtensionLoop"
@@ -383,7 +383,7 @@
    },
    {  
     "type":"Microsoft.Compute/virtualMachines/extensions",
-    "name":"[concat(variables('vmNamePrefix'),'1/configuringAlwaysOn')]",
+    "name":"[concat(variables('vmNamePrefix'),'2/configuringAlwaysOn')]",
     "location":"[parameters('location')]",
     "dependsOn": [
       "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'0'), 'sqlAOPrepare')]"

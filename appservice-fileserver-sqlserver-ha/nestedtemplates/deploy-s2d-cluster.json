@@ -286,7 +286,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmNamePrefix'),'0/s2dConfig')]",
+      "name": "[concat(variables('vmNamePrefix'),'1/s2dConfig')]",
       "location": "[parameters('location')]",
       "dependsOn": [
         "virtualMachineLoop",
