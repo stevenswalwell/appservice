@@ -386,7 +386,7 @@
     "name":"[concat(variables('vmNamePrefix'),'2/configuringAlwaysOn')]",
     "location":"[parameters('location')]",
     "dependsOn": [
-      "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'0'), 'sqlAOPrepare')]"
+      "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'1'), 'sqlAOPrepare')]"
     ],
     "properties":{  
        "publisher":"Microsoft.Powershell",
