@@ -33,22 +33,22 @@
       "value": "appsvcsa"
     },
     "artifactsLocation": {
-      "value": "https://github.com/stevenswalwell/appservicedeploy/tree/main/appservice-fileserver-sqlserver-ha"
+      "value": "https://github.com/stevenswalwell/appservicedeploy/raw/main/appservice-fileserver-sqlserver-ha"
     },
     "adminPassword": {
-      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+      "value": "1bm&xfmAZURE"
     },
     "fileShareOwnerPassword": {
-      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+      "value": "1bm&xfmAZURE"
     },
     "fileShareUserPassword": {
-      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+      "value": "1bm&xfmAZURE"
     },
     "sqlServerServiceAccountPassword": {
-      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+      "value": "1bm&xfmAZURE"
     },
     "sqlLoginPassword": {
-      "value": "P:2s{^VK^G>n-b{TE-q'#F5r/N"
+      "value": "1bm&xfmAZURE"
     }
   }
 }
