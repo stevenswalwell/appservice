@@ -17,7 +17,7 @@
       "metadata": {
         "description": "Size of the Active Directory VMs to be created"
       },
-      "defaultValue": "Standard_DS1_v2"
+      "defaultValue": "Standard_DS2_v2"
     },
     "filServerVmSize": {
       "type": "string",
