@@ -136,7 +136,7 @@
     "sqlAOListenerName":"aon-listener-lensqlhademo",
     "sqlAOListenerPort":1433,
     "sqlLBIPAddress":"[parameters('SqlListenerIP')]",
-    "adPDCVMName":"[concat(parameters('namePrefix'),'-ad-1')]"
+    "adPDCVMName":"[concat(parameters('namePrefix'),'-ad-0')]"
   },
   "resources": [
     {
@@ -216,7 +216,7 @@
       }
     },
     {
-      "name": "[concat(variables('vmNamePrefix'), copyindex(1), '-nic')]",
+      "name": "[concat(variables('vmNamePrefix'), copyindex(), '-nic')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
       "dependsOn": [
@@ -251,7 +251,7 @@
         "name": "virtualMachineLoop",
         "count": "[parameters('vmCount')]"
       },
-      "name": "[concat(variables('vmNamePrefix'),copyindex(1),'-newVM')]",
+      "name": "[concat(variables('vmNamePrefix'),copyindex(),'-newVM')]",
       "dependsOn": [
         "nicLoop",
         "[resourceId('Microsoft.Compute/availabilitySets', variables('vmAvailabilitySetName'))]"
@@ -263,7 +263,7 @@
         },
         "parameters": {
           "vmName": {
-            "value": "[concat(variables('vmNamePrefix'), copyindex(1))]"
+            "value": "[concat(variables('vmNamePrefix'), copyindex())]"
           },
           "vmAvailabilitySetName": {
             "value": "[variables('vmAvailabilitySetName')]"
@@ -306,7 +306,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmNamePrefix'),copyindex(1),'/SqlVmIaasExtension')]",
+      "name": "[concat(variables('vmNamePrefix'),copyindex(),'/SqlVmIaasExtension')]",
       "location": "[parameters('location')]",
       "dependsOn": [
         "virtualMachineLoop"
@@ -345,7 +345,7 @@
     },
     {  
       "type":"Microsoft.Compute/virtualMachines/extensions",
-      "name":"[concat(variables('vmNamePrefix'),'1/sqlAOPrepare')]",
+      "name":"[concat(variables('vmNamePrefix'),'0/sqlAOPrepare')]",
       "location":"[parameters('location')]",
       "dependsOn":[
         "virtualMachineExtensionLoop"
@@ -383,10 +383,10 @@
    },
    {  
     "type":"Microsoft.Compute/virtualMachines/extensions",
-    "name":"[concat(variables('vmNamePrefix'),'2/configuringAlwaysOn')]",
+    "name":"[concat(variables('vmNamePrefix'),'1/configuringAlwaysOn')]",
     "location":"[parameters('location')]",
     "dependsOn": [
-      "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'1'), 'sqlAOPrepare')]"
+      "[resourceId('Microsoft.Compute/virtualMachines/extensions',  concat(variables('vmNamePrefix'),'0'), 'sqlAOPrepare')]"
     ],
     "properties":{  
        "publisher":"Microsoft.Powershell",
@@ -406,8 +406,8 @@
                "password": "PrivateSettingsRef:witnessStorageKey"
              },             
              "nodes":[  
-                "[concat(variables('vmNamePrefix'),'1')]",
-                "[concat(variables('vmNamePrefix'),'2')]"
+                "[concat(variables('vmNamePrefix'),'0')]",
+                "[concat(variables('vmNamePrefix'),'1')]"
              ],
              "sqlAlwaysOnEndpointName":"[variables('sqlAOEPName')]",
              "sqlAlwaysOnAvailabilityGroupName":"[variables('sqlAOAGName')]",
@@ -416,8 +416,8 @@
              "databaseNames":"AutoHa-sample",
              "lbName":"[variables('sqlLBName')]",
              "lbAddress":"[variables('sqlLBIPAddress')]",
-             "primaryReplica":"[concat(variables('vmNamePrefix'),'2')]",
-             "secondaryReplica":"[concat(variables('vmNamePrefix'),'1')]",
+             "primaryReplica":"[concat(variables('vmNamePrefix'),'1')]",
+             "secondaryReplica":"[concat(variables('vmNamePrefix'),'0')]",
              "dnsServerName":"[variables('adPDCVMName')]",
              "adminCreds":{  
                 "userName":"[parameters('adminUserName')]",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "apiProfile": "2019-03-01-hybrid",
+  "apiProfile": "2018-03-01-hybrid",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
@@ -10,7 +10,7 @@
       "metadata": {
         "description": "Naming prefix for each new resource created. 3-char min, 5-char max, lowercase alphanumeric"
       },
-      "defaultValue": "apprp"
+      "defaultValue": "aps"
     },
     "domainVmSize": {
       "type": "string",
@@ -38,14 +38,14 @@
       "metadata": {
         "description": "DNS domain name for Active Directory domain"
       },
-      "defaultValue": "apprp.local"
+      "defaultValue": "appsvc.local"
     },
     "adminUsername": {
       "type": "string",
       "metadata": {
         "description": "Name of the Domain Administrator account"
       },
-      "defaultValue": "apprp.admin"
+      "defaultValue": "appsvcadmin"
     },
     "adminPassword": {
       "type": "securestring",
@@ -59,7 +59,7 @@
       "metadata": {
         "description": "Username for the fileshareowner account"
       },
-      "defaultValue": "apprp.fso"
+      "defaultValue": "FileShareOwner"
     },
     "fileShareOwnerPassword": {
       "type": "securestring",
@@ -73,7 +73,7 @@
       "metadata": {
         "description": "Username for the FileShareUser account"
       },
-      "defaultValue": "apprp.fsu"
+      "defaultValue": "FileShareUser"
     },
     "fileShareUserPassword": {
       "type": "securestring",
@@ -87,7 +87,7 @@
       "metadata": {
         "description": "Username for the SQL service account"
       },
-      "defaultValue": "svc_apprp.sql"
+      "defaultValue": "svcSQL"
     },
     "sqlServerServiceAccountPassword": {
       "type": "securestring",
@@ -101,7 +101,7 @@
       "metadata": {
         "description": "Username for the SQL account"
       },
-      "defaultValue": "apprpsa"
+      "defaultValue": "sqlsa"
     },
     "sqlLoginPassword": {
       "type": "securestring",
@@ -115,7 +115,7 @@
       "metadata": {
         "description": "Name of clustered Scale-Out File Server role"
       },
-      "defaultValue": "apprpfs01"
+      "defaultValue": "fs01"
     },
     "shareName": {
       "type": "string",
@@ -166,17 +166,17 @@
       "deployS2D": "[concat(parameters('artifactsLocation'),'/nestedtemplates/deploy-s2d-cluster.json',parameters('artifactsLocationSasToken'))]",
       "deploySql": "[concat(parameters('artifactsLocation'),'/nestedtemplates/deploy-sql-cluster.json',parameters('artifactsLocationSasToken'))]"
     },
-    "vnetPrefix": "172.10.0.0/16",
-    "adSubnetPrefix": "172.10.0.0/24",
-    "sqlSubnetPrefix": "172.10.1.0/24",
-    "fsSubnetPrefix": "172.10.2.0/24",
-    "controllerSubnetPrefix": "172.10.3.0/24",
-    "managementSubnetPrefix": "172.10.4.0/24",
-    "publisherSubnetPrefix": "172.10.5.0/24",
-    "frontendadSubnetPrefix": "172.10.6.0/24",
-    "workerSubnetPrefix": "172.10.8.0/21",
-    "adStatipIP":["172.10.0.100","172.10.0.101"],
-    "sqllistenerip":"172.10.1.100",
+    "vnetPrefix": "10.0.0.0/16",
+    "adSubnetPrefix": "10.0.0.0/24",
+    "sqlSubnetPrefix": "10.0.1.0/24",
+    "fsSubnetPrefix": "10.0.2.0/24",
+    "controllerSubnetPrefix": "10.0.3.0/24",
+    "managementSubnetPrefix": "10.0.4.0/24",
+    "publisherSubnetPrefix": "10.0.5.0/24",
+    "frontendadSubnetPrefix": "10.0.6.0/24",
+    "workerSubnetPrefix": "10.0.8.0/21",
+    "adStatipIP":["10.0.0.100","10.0.0.101"],
+    "sqllistenerip":"10.0.1.100",
     "networkSettings": {
       "vnetName": "[variables('names').vnet]",
       "addressSpace": {
