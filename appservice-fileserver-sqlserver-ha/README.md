@@ -23,7 +23,7 @@ As stated the goal of this template is to deploy the infrastructure needed to su
 * When installing AppService be sure to select the option to deploy to an existing VNET
 * Details of File Server and SQL server endpoints & accounts can be found in the outputs noted 
 * After AppService deployment is complete manually back up bot the metering and hosting databases and add them to the availability group. 
-* By default, the AppService Controller VM(s) have public IP addresses update the Controller NSG to allow RDP access, the SQL servers can be accessed from here on default IP addresses of 10.0.1.4 and 10.0.1.5
+* By default, the AppService Controller VM(s) have public IP addresses update the Controller NSG to allow RDP access, the SQL servers can be accessed from here on default IP addresses of 10.242.1.4 and 10.242.1.5
 
 ## Notes
 
